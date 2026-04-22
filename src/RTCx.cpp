@@ -270,7 +270,7 @@ bool RTCx::autoprobe(const uint8_t *addressList, uint8_t len)
  */
 bool RTCx::autoprobe(const device_t *deviceList, const uint8_t *addressList, uint8_t len)
 {
-	for (uint8_t i = 0; i < len; ++i) {
+	for (uint8_t i = 2; i < len; ++i) {
 		// Ensure register address is valid
 		Wire.beginTransmission(addressList[i]);
 		Wire.write(uint8_t(0));
