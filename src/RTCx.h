@@ -61,6 +61,7 @@ public:
 	};
 
 	enum freq_t {
+		freq0Hz = -1, // disable the output!		
 		freq1Hz = 0,
 		freq4096Hz = 1,
 		freq8192Hz = 2,
@@ -71,7 +72,7 @@ public:
 		freq1024Hz = 5,
 		freq2048Hz = 6,
 		freq16384Hz = 7,
-		freqOutputLow = 8,
+		freqOutputLow = 8,	
 	};
 
 	static const uint8_t epochDow; // Day of the week for the epoch date

@@ -580,7 +580,14 @@ bool RTCx::setSQW(freq_t f) const
 		if (f <= freqCalibration) {
 			uint8_t ctrl = readData(0x07) & uint8_t(0xf8);
 			ctrl |= f;
-			ctrl |=0x40; // Enable square wave
+			if(f==freq0Hz)
+			{
+				ctrl &=~0x40; // disable square wave
+			}
+			else
+			{
+				ctrl |=0x40; // Enable square wave				
+			}				
 			writeData(0x07, ctrl);
 			return true;
 		}
