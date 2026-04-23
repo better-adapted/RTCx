@@ -582,7 +582,7 @@ bool RTCx::setSQW(freq_t f) const
 			ctrl |= f;
 			if(f==freq0Hz)
 			{
-				ctrl &=~0x40; // disable square wave
+				ctrl = 0x80; // disable square wave
 			}
 			else
 			{
